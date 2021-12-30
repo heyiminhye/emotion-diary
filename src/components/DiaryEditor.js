@@ -47,7 +47,7 @@ const DiaryEditor = () => {
   const [emotion, setEmotion] = useState(3);
   const [date, setDate] = useState(getStringDate(new Date()));
 
-  const onCreate = useContext(DiaryDispatchContext);
+  const { onCreate } = useContext(DiaryDispatchContext);
   const handleClickEmote = (emotion) => {
     setEmotion(emotion);
   };
