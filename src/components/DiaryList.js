@@ -11,6 +11,7 @@ const sortOptionList = [
 const filterOptionList = [
   { value: "all", name: "전부다" },
   { value: "good", name: "좋은 감정만" },
+  { value: "soso", name: "그럭저럭 감정만" },
   { value: "bad", name: "안 좋은 감정만" },
 ];
 const ControlMenu = ({ value, onChange, optionList }) => {
@@ -37,7 +38,9 @@ const DiaryList = ({ diaryList }) => {
   const getProcessedDiaryList = () => {
     const filterCallBack = (item) => {
       if (filter === "good") {
-        return parseInt(item.emotion) <= 3;
+        return parseInt(item.emotion) <= 2;
+      } else if (filter === "soso") {
+        return parseInt(item.emotion) === 3;
       } else {
         return parseInt(item.emotion) > 3;
       }

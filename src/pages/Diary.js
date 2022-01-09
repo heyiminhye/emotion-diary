@@ -33,11 +33,11 @@ const Diary = () => {
   if (!data) {
     return <div className="DiaryPage">로딩중입니다...</div>;
   } else {
-    console.log("sajad emotionList " + emotionList[0]["emotion_img"]);
+    // console.log("emotionList " + emotionList[0]["emotion_img"]);
     const curEmotionData = emotionList.find(
       (it) => parseInt(it.emotion_id) === parseInt(data.emotion)
     );
-    console.log("sajad curEmotionData " + curEmotionData);
+    // console.log("curEmotionData " + curEmotionData);
     return (
       <div className="DiaryPage">
         <MyHeader
