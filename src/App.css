@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
+
 body {
   background-color: #f6f6f6;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Nanum Pen Script";
+  font-family: "Gamja Flower";
   min-height: 100vh;
   margin: 0;
 }
@@ -43,7 +45,7 @@ body {
   font-size: 18px;
 
   white-space: nowrap;
-  font-family: "Nanum Pen Script";
+  font-family: "Gamja Flower";
 }
 
 .MyButton_default {
@@ -92,7 +94,7 @@ header .head_btn_right {
 }
 
 header button {
-  font-family: "Nanum Pen Script";
+  font-family: "Gamja Flower";
 }
 
 /* DiaryList */
@@ -121,7 +123,7 @@ header button {
 
   padding: 10px 20px;
   cursor: pointer;
-  font-family: "Nanum Pen Script";
+  font-family: "Gamja Flower";
   font-size: 18px;
 }
 
@@ -210,7 +212,7 @@ header button {
   padding: 10px 20px;
 
   cursor: pointer;
-  font-family: "Nanum Pen Script";
+  font-family: "Gamja Flower";
   font-size: 20px;
 }
 
@@ -221,7 +223,7 @@ header button {
 }
 
 .DiaryEditor textarea {
-  font-family: "Nanum Pen Script";
+  font-family: "Gamja Flower";
   font-size: 20px;
 
   box-sizing: border-box;

@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { DiaryStateContext } from "../App";
 import { getStringDate } from "../util/date.js";
-
+import { emotionList } from "../util/emotion";
 import MyHeader from "../components/MyHeader";
 import MyButton from "../components/MyButton";
 
@@ -33,6 +33,11 @@ const Diary = () => {
   if (!data) {
     return <div className="DiaryPage">로딩중입니다...</div>;
   } else {
+    console.log("sajad emotionList " + emotionList[0]["emotion_img"]);
+    const curEmotionData = emotionList.find(
+      (it) => parseInt(it.emotion_id) === parseInt(data.emotion)
+    );
+    console.log("sajad curEmotionData " + curEmotionData);
     return (
       <div className="DiaryPage">
         <MyHeader
@@ -42,11 +47,23 @@ const Diary = () => {
           }
           rightChild={
             <MyButton
-              text={"수정"}
+              text={"수정하기"}
               onClick={() => navigate(`/edit/${data.id}`)}
             />
           }
         />
+        <article>
+          {/* div와 같이 block 속성을 가지고 있으며 각각의 독립적인 문서 혹은 요소를 담을 때 사용*/}
+          <section>
+            <h4>오늘의 감정</h4>
+            <div className="diary_img_wrapper">
+              <img src={curEmotionData.emotion_img} alt="" />
+              <div className="emotion_descript">
+                {curEmotionData.emotion_descript}
+              </div>
+            </div>
+          </section>
+        </article>
       </div>
     );
   }

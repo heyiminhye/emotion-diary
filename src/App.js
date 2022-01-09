@@ -40,39 +40,39 @@ const dummyData = [
   {
     id: 1,
     emotion: 1,
-    content: "sdad",
-    date: 1640781664182,
+    content: "이모션",
+    date: 1641705227533,
   },
   {
     id: 2,
     emotion: 2,
-    content: "sddfsdad",
-    date: 1640781664183,
+    content: "다이어리는",
+    date: 1641705227534,
   },
   {
     id: 3,
     emotion: 3,
-    content: "sddfsdad",
-    date: 1640781664184,
+    content: "감정을",
+    date: 1641705227535,
   },
   {
     id: 4,
     emotion: 4,
-    content: "sddfsdad",
-    date: 1640781664185,
+    content: "기록하는",
+    date: 1641705227536,
   },
   {
     id: 5,
     emotion: 5,
-    content: "sddfsdad",
-    date: 1640781664186,
+    content: "감정일기",
+    date: 1641705227537,
   },
 ];
 
 function App() {
   const [data, dispatch] = useReducer(reducer, dummyData);
 
-  console.log(new Date().getTime());
+  console.log(new Date().getTime()); //현재날짜를 ISO 형식으로 보여줌
   const dataId = useRef(0);
   // CREATE
   const onCreate = (date, content, emotion) => {
