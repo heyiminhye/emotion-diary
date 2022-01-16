@@ -1,5 +1,6 @@
 {
   "name": "emotion-diary",
+  "homepage": "https://heyiminhye.github.io/emotion-diary",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
