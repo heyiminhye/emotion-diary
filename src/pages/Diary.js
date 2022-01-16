@@ -56,11 +56,22 @@ const Diary = () => {
           {/* div와 같이 block 속성을 가지고 있으며 각각의 독립적인 문서 혹은 요소를 담을 때 사용*/}
           <section>
             <h4>오늘의 감정</h4>
-            <div className="diary_img_wrapper">
+            <div
+              className={[
+                "diary_img_wrapper",
+                ` diary_img_wrapper_${data.emotion}`,
+              ].join("")}
+            >
               <img src={curEmotionData.emotion_img} alt="" />
               <div className="emotion_descript">
                 {curEmotionData.emotion_descript}
               </div>
+            </div>
+          </section>
+          <section>
+            <h4>오늘의 일기</h4>
+            <div className="diary_content_wrapper">
+              <p>{data.content}</p>
             </div>
           </section>
         </article>
