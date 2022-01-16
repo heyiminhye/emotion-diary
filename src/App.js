@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React, { useReducer, useRef } from "react";
+import React, { useReducer, useRef, useEffect } from "react";
 
 import Home from "./pages/Home";
 import New from "./pages/New";
@@ -30,50 +30,22 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+
+  localStorage.setItem("diary", JSON.stringify(newState));
   return newState;
 };
 
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
-const dummyData = [
-  {
-    id: 1,
-    emotion: 1,
-    content: "이모션",
-    date: 1641705227533,
-  },
-  {
-    id: 2,
-    emotion: 2,
-    content: "다이어리는",
-    date: 1641705227534,
-  },
-  {
-    id: 3,
-    emotion: 3,
-    content: "감정을",
-    date: 1641705227535,
-  },
-  {
-    id: 4,
-    emotion: 4,
-    content: "기록하는",
-    date: 1641705227536,
-  },
-  {
-    id: 5,
-    emotion: 5,
-    content: "감정일기",
-    date: 1641705227537,
-  },
-];
-
 function App() {
-  const [data, dispatch] = useReducer(reducer, dummyData);
+  useEffect(() => {}, []);
+
+  const [data, dispatch] = useReducer(reducer, []);
 
   console.log(new Date().getTime()); //현재날짜를 ISO 형식으로 보여줌
-  const dataId = useRef(0);
+
+  const dataId = useRef(6);
   // CREATE
   const onCreate = (date, content, emotion) => {
     dispatch({
