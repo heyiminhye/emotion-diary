@@ -7,6 +7,9 @@ import New from "./pages/New";
 import Edit from "./pages/Edit";
 import Diary from "./pages/Diary";
 
+const env = process.env;
+env.PUBLIC_URL = env.PUBLIC_URL || "";
+
 const reducer = (state, action) => {
   let newState = [];
   switch (action.type) {
@@ -61,7 +64,7 @@ function App() {
 
   console.log(new Date().getTime()); //현재날짜를 ISO 형식으로 보여줌
 
-  const dataId = useRef(0);
+  const dataId = useRef(1);
   // CREATE
   const onCreate = (date, content, emotion) => {
     dispatch({
